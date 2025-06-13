@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalles</title>
+</head>
+<body>
+    {{pregunta.pregunta}}
+    {% for respuesta in respuestas  %}
+        <li>{{respuesta.respuesta}}</li>
+    {% empty %}
+    <li>No hay respuestas para esta pregunta</li>
+    {% endfor %}
+</body>
+</html>
