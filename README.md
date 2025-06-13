@@ -1,0 +1,1 @@
+Mi primer proyecto usando Python y Django, por ahora esta es solo la estructura básica
