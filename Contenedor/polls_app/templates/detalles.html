@@ -1,16 +1,24 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'detalles.css' %}">
     <title>Detalles</title>
 </head>
 <body>
-    {{pregunta.pregunta}}
+    <h2>{{todas_las_preguntas.pregunta}}</h2>
     {% for respuesta in respuestas  %}
-        <li>{{respuesta.respuesta}}</li>
-    {% empty %}
-    <li>No hay respuestas para esta pregunta</li>
+    <div class="respuestas_container">
+        <ul>
+        <li class="respuestas">{{respuesta.respuesta}} <br><p class="fecha">{{respuesta.fecha}}</p></li>
+    </ul>
+    </div>
+        {% empty %}
+        <h2>Esta pregunta todavia no tiene respuestas</h2>
     {% endfor %}
+        
+    
 </body>
 </html>

@@ -1,0 +1,17 @@
+body{
+    background-color: #555;
+    font-family: sans-serif;
+}
+
+.respuestas_container{
+    font-style: italic;
+
+}
+
+.respuestas{
+    margin-top: 10px;
+}
+
+.fecha{
+    font-size: 10px;
+}

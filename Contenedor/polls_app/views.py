@@ -1,6 +1,7 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from polls_app import models
-
+def home(request):
+    return render(request, "index.html")
 def mostrar_preguntas(request):
     preguntas=models.Question.objects.all().order_by("fecha_publicacion")
 
@@ -10,11 +11,10 @@ def mostrar_preguntas(request):
 
 def detalles(request,question_id):
     #Obtengo la pregunta con ese Id
-    preguntas=models.Question.objects.get(id=question_id)
+    todas_las_preguntas=get_object_or_404(models.Question,id=question_id)
     #Obtengo todas las respuestas de esa pregunta
-    respuestas=preguntas.respuestas.all()
+    respuestas=todas_las_preguntas.respuestas.all()
 
     return render(request, "detalles.html",{"respuestas": respuestas,
-                                            "pregunta":preguntas})
+                                            "preguntas":todas_las_preguntas})
 
-    
