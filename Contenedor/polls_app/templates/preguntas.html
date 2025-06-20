@@ -13,10 +13,13 @@
 </head>
 <body>
     <h1>Preguntas recientes</h1>
+    <p>Para ver todas las respuestas de cada pregunta, solo tiene que tocar en la pregunta y será redirigido automáticamente</p>
     {% for pregunta in preguntas  %}
     <div class="pregunta_container">
         <ul>
-            <h2><li><a href="{% url 'detalles_por_pregunta' pregunta.id %}">{{pregunta}}</a><div class="fecha"><br>{{pregunta.fecha_publicacion}}</div> </li></h2>
+            <h2><li>{{pregunta}}<div class="fecha"><br>{{pregunta.fecha_publicacion}}</div> </li></h2>
+            <a href="{% url 'detalles_por_pregunta' pregunta.id %}">Ver respuestas</a>
+            <a href="{% url "responder" pregunta.id  %}">Responder pregunta</a>
         </ul>
     </div>
         
