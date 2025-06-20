@@ -1,8 +1,12 @@
+{% load static %}
+<link rel="stylesheet" href="{% static 'base.css' %}">
 <div class="nav_container">
     <nav class="barra_navegacion">
-        
+        <ul class="barra_elementos">
         <li><a href="{% url 'preguntas' %}">Preguntas</a></li>
         <li><a href="{% url 'inicio' %}">Menú</a></li>
+        
+        </ul>
         
 
     </nav>

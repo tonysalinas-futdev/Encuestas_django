@@ -1,0 +1,35 @@
+.nav_container {
+    width: 100%;
+    display: inline-block;
+    margin-bottom: 20px;
+}
+
+.barra_navegacion {
+    background: #6f6;
+    padding: 10px;
+}
+
+.barra_elementos {
+    display: flex;
+    gap: 20px;
+    list-style: none;
+    margin: 0;
+    padding: 20;
+    align-items: center;
+}
+
+.barra_elementos li {
+    margin-left: 30;
+    padding: 10;
+}
+
+.barra_elementos a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+    font-size: 20;
+}
+
+
+
+
