@@ -1,8 +1,10 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from polls_app import models
 from polls_app.forms import PreguntaForm, RespuestaForm    
+from django.contrib import messages
 def home(request):
-    return render(request, "index.html")
+    ultimas_preguntas=models.Question.objects.all().order_by("-fecha_publicacion")[:5]
+    return render(request, "index.html",{"preguntas":ultimas_preguntas})
 
 def mostrar_preguntas(request):
     preguntas=models.Question.objects.all().order_by("fecha_publicacion")
@@ -15,7 +17,7 @@ def detalles(request,question_id):
     #Obtengo la pregunta con ese Id
     todas_las_preguntas=get_object_or_404(models.Question,id=question_id)
     #Obtengo todas las respuestas de esa pregunta
-    respuestas=todas_las_preguntas.respuestas.all()
+    respuestas=todas_las_preguntas.respuestas.all().order_by("-fecha")
 
     return render(request, "detalles.html",{"respuestas": respuestas,
                                             "preguntas":todas_las_preguntas})
@@ -25,6 +27,8 @@ def crear_pregunta(request):
         form=PreguntaForm(request.POST)
         if form.is_valid():
             form.save()
+            messages.success(request,"Pregunta enviada correctamente")
+
             return redirect("inicio")
     else:
         form=PreguntaForm()

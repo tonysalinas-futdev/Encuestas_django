@@ -1,0 +1,21 @@
+*{
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.pregunta{
+    font-size: 35px;
+}
+
+.fecha{
+    font-weight: bold;
+}
+
+.lista{
+    
+    margin-right: 0;
+    border-bottom: 5px black solid;
+}
+
+ul{
+    list-style: none;
+}

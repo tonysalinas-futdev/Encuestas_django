@@ -7,6 +7,7 @@
 .barra_navegacion {
     background: #6f6;
     padding: 10px;
+    border-radius: 10px;
 }
 
 .barra_elementos {

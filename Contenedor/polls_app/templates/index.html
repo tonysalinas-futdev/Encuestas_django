@@ -1,7 +1,16 @@
 {% extends 'base.html' %}
 {% block content %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'index.css' %}">
     <h1>Hola</h1>
-    <h2>Si desea hacer alguna pregunta, haga click debajo</h2>
+    <h2>Ultimas preguntas</h2>
+    {% for pregunta in preguntas  %}
+    <ul>
+        <li class="lista"><p class="pregunta">{{pregunta.pregunta}}</p> <p class="fecha"><br>{{pregunta.fecha_publicacion}}</p> </li>
+    </ul>
+        
+    {% endfor %}
+    <h2>Para crear una pregunta , haga clic en el enlace de debajo</h2>
     <a href="{%url "formulario"%}"><h3>Crear pregunta</h3></a>
 {% endblock content %}
 

@@ -1,17 +1,29 @@
 body{
-    background-color: #555;
+    background-color: #fff ;
     font-family: sans-serif;
 }
 
 .respuestas_container{
     font-style: italic;
+    padding: 20px;
+    background-color: #06f;
+    margin-top: 10px;
+    border-radius: 10px;
+    display: flex;
 
 }
 
 .respuestas{
     margin-top: 10px;
+    font-style: oblique;
+    font-size: 18px;
 }
 
 .fecha{
     font-size: 10px;
+
+}
+
+ul{
+    list-style: none;
 }
