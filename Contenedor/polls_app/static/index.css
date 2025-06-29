@@ -1,21 +1,62 @@
-*{
-    font-family: 'Times New Roman', Times, serif;
+body {
+    background-color: #f4f6fb;
+    margin: 0;
+    padding: 0;
 }
 
-.pregunta{
-    font-size: 35px;
+* {
+    font-family: 'Segoe UI', 'Times New Roman', Times, serif;
 }
 
-.fecha{
+h1, h2 {
+    color: #1976d2;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.pregunta {
+    font-size: 20px;
+    color: #222;
+    margin-bottom: 8px;
     font-weight: bold;
 }
 
-.lista{
-    
-    margin-right: 0;
-    border-bottom: 5px black solid;
+.fecha {
+    font-size: 13px;
+    color: #888;
+    margin-bottom: 5px;
 }
 
-ul{
+.lista {
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(25, 118, 210, 0.08);
+    margin: 18px auto;
+    padding: 18px 28px;
     list-style: none;
+    max-width: 600px;
+    transition: box-shadow 0.2s;
+    border-left: 5px solid #1976d2;
+}
+
+.lista:hover {
+    box-shadow: 0 4px 20px rgba(25, 118, 210, 0.18);
+    border-left: 5px solid #388e3c;
+}
+
+a.crear-pregunta {
+    display: inline-block;
+    background: #1976d2;
+    color: #fff;
+    padding: 10px 22px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    margin: 25px auto 0 auto;
+    text-align: center;
+    transition: background 0.2s;
+}
+
+a.crear-pregunta:hover {
+    background: #388e3c;
 }

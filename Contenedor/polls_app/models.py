@@ -11,4 +11,6 @@ class Question(models.Model):
 class Respuesta(models.Model):
     respuesta=models.TextField(max_length=2000,help_text="Escriba aqui su respuesta")
     fecha=models.DateTimeField(auto_now_add=True)
+    parent=models.ForeignKey("self", null=True, blank=True, on_delete=models.CASCADE, related_name="sobrerespuestas")
     question=models.ForeignKey(Question, on_delete=models.CASCADE, related_name="respuestas")
+    votos=models.PositiveIntegerField(default=0)
